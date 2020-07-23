@@ -1,3 +1,3 @@
 # CCP-management
 
-Welcome to the magic land of CCP
+Welcome to the magic land of CCP!
