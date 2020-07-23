@@ -112,3 +112,6 @@ buildNumber.properties
 .mvn/wrapper/maven-wrapper.jar
 
 
+!/03-frontend/
+!/02-backend/
+!/01-starter-files/
