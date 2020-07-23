@@ -2,28 +2,37 @@ package com.ccp.entity;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "projects")
-@ToString
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-public class Project extends AbstractEntity {
+//@ToString
+//@Data
+@Getter
+@Setter
+//@NoArgsConstructor
+//@AllArgsConstructor
+//@Builder
+public class Project {
 
-    @Column
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Integer id;
+
+    @Column (name = "name")
     private String name;
-    @Column
+
+    @Column(name = "duration")
     private Integer duration;
-    @Column
+
+    @Column(name = "income")
     private Integer income;
-    @Column
-    private List<Employee> workers;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "project")
+    private Set<Employee> workers;
 
 
 }
