@@ -8,27 +8,22 @@ import java.util.Set;
 
 @Entity
 @Table(name = "projects")
-//@ToString
+@ToString
 //@Data
 @Getter
 @Setter
-//@NoArgsConstructor
-//@AllArgsConstructor
-//@Builder
-public class Project {
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Project extends  AbstractEntity{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Integer id;
-
-    @Column (name = "name")
+    @Column
     private String name;
 
-    @Column(name = "duration")
+    @Column
     private Integer duration;
 
-    @Column(name = "income")
+    @Column
     private Integer income;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "project")

@@ -8,23 +8,19 @@ import java.util.Date;
 @Entity
 @Table(name = "employees")
 @Data
-//@Builder
-//@ToString
-//@AllArgsConstructor
-//@NoArgsConstructor
-public class Employee  {
+@Builder
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
+public class Employee extends AbstractEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Integer id;
-    @Column(name = "name")
+    @Column
     private String name;
-    @Column(name = "surname")
+    @Column
     private String surname;
 
     @ManyToOne
-    @JoinColumn(name = "project_id", nullable = false)
+    @JoinColumn(name = "project_id")
 //    @JoinColumn(name = "user_id", insertable = false, updatable = false)
     private Project project;
 
